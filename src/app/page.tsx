@@ -1,31 +1,21 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
-import Events from "@/components/Events";
-import Certifications from "@/components/Certifications";
-import Resume from "@/components/Resume";
-import GitHubStats from "@/components/GitHubStats";
-import Contact from "@/components/Contact";
+import Experience from "@/components/canvas/Experience";
+import Overlay from "@/components/Overlay";
 import CustomCursor from "@/components/CustomCursor";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen relative cursor-default md:cursor-none">
+    <main className="w-full relative bg-[#020202] selection:bg-white/20 selection:text-white min-h-screen">
       <CustomCursor />
-      <Navbar />
       
-      {/* Portfolios Sections */}
-      <Hero />
-      <About />
-      <Projects />
-      <Events />
-      <Certifications />
-      <Skills />
-      <GitHubStats />
-      <Resume />
-      <Contact />
+      {/* 3D Canvas Background fixed behind everything */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <Experience />
+      </div>
+
+      {/* The Scrollable HTML Foreground */}
+      <div className="relative z-10 w-full h-full pointer-events-none">
+        <Overlay />
+      </div>
     </main>
   );
 }

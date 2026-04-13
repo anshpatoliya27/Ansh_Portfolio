@@ -4,62 +4,53 @@
   --color-brand-cyan: #00f0ff;
   --color-brand-purple: #8a2be2;
   --color-brand-blue: #0047ff;
-  --color-navbg: rgba(10, 10, 15, 0.7);
-  --color-glassbg: rgba(255, 255, 255, 0.03);
+  --color-brand-accent: #ff4500;
+  --color-glass-bg: rgba(255, 255, 255, 0.05);
 }
 
 :root {
-  --background: #050508;
+  --background: #020202;
   --foreground: #ffffff;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: inherit;
-  overflow-x: hidden;
+  font-family: var(--font-inter), sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  /* Allow scrolling smoothly natively */
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Glassmorphism utilities */
-.glass-panel {
-  background: var(--color-glassbg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Neon glow utilities */
-.neon-text-cyan {
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.4);
-}
-
-.neon-text-purple {
-  text-shadow: 0 0 10px rgba(138, 43, 226, 0.7), 0 0 20px rgba(138, 43, 226, 0.4);
-}
-
-.neon-shadow-cyan {
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), 0 0 30px rgba(0, 240, 255, 0.1);
-}
-
-.neon-shadow-purple {
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3), 0 0 30px rgba(138, 43, 226, 0.1);
-}
-
-/* Minimal Scrollbar */
+/* Minimal Scrollbar for sleekness */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #050508; 
+  background: #020202; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1f1f2e; 
-  border-radius: 4px;
+  background: #2a2a35; 
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-brand-cyan); 
+  background: #ff4500; 
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+  color: transparent;
+}
+
+.glass-panel {
+  background: rgba(10, 10, 15, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
